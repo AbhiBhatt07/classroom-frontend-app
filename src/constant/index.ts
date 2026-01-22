@@ -22,7 +22,7 @@ export const DEPARTMENTS = [
   'Russian',
 ]
 
-export const DEPEARTMENT_OPTION = DEPARTMENTS.map((department) => ({
+export const DEPARTMENT_OPTION = DEPARTMENTS.map((department) => ({
   value: department,
   label: department
 }))

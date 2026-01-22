@@ -4,7 +4,7 @@ import { Breadcrumb } from '@/components/refine-ui/layout/breadcrumb'
 import { ListView } from '@/components/refine-ui/views/list-view'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { DEPEARTMENT_OPTION } from '@/constant'
+import { DEPARTMENT_OPTION } from '@/constant'
 import { useTable } from "@refinedev/react-table";
 import { Search } from 'lucide-react'
 import React, { useMemo, useState } from 'react'
@@ -17,7 +17,7 @@ const SubjectList = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('')
 
   // Filters 
-  const depratmentFilters = selectedDepartment === 'all' ? [] : [
+  const departmentFilters = selectedDepartment === 'all' ? [] : [
     { field: 'department', operator: 'eq' as const, value: selectedDepartment }
   ]
   // Search 
@@ -60,7 +60,7 @@ const SubjectList = () => {
       resource: 'subjects',
       pagination: { pageSize: 10, mode: 'server' },
       filters: {
-        permanent: [...depratmentFilters, ...searchFilters]
+        permanent: [...departmentFilters, ...searchFilters]
       },
       sorters: {
         initial: [
@@ -78,7 +78,7 @@ const SubjectList = () => {
       <Breadcrumb />
       <h1 className='page-title'>Subjects</h1>
       <div className='intro-row'>
-        <p className=''>Quick access to essential metrics and managment tools</p>
+        <p className=''>Quick access to essential metrics and management  tools</p>
         <div className='actions-row'>
           <div className='search-field'>
             <Search className='search-icon' />
@@ -99,11 +99,10 @@ const SubjectList = () => {
               </SelectTrigger>
 
               <SelectContent>
-                <SelectItem value='all'>
-                  All Departments
-                </SelectItem>
-                {DEPEARTMENT_OPTION.map(department => (
-                  <SelectItem key={department.value} value={department.value}>{department.label}</SelectItem>
+                {DEPARTMENT_OPTION.map(department => (
+                  <SelectItem key={department.value} value={department.value}>
+                     {department.value === 'all' ? 'All Departments' : department.label}
+                    </SelectItem>
                 ))}
               </SelectContent>
             </Select>
