@@ -80,7 +80,7 @@ const Create = () => {
   const setBannerImage = (file, field) => {
     if (file) {
       field.onChange(file.url)
-      form.setValue('bannerCldPubId', file.public_id, {
+       form.setValue('bannerCldPubId', file.publicId, {
         shouldValidate: true,
         shouldDirty: true
       })
