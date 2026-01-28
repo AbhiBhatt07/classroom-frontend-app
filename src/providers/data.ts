@@ -1,4 +1,4 @@
-import { BACKEND_BASE_URL } from "@/constant";
+import { BACKEND_BASE_URL } from "@/constants";
 import { ListResponse } from "@/types";
 import { createDataProvider, CreateDataProviderOptions } from "@refinedev/rest";
 
