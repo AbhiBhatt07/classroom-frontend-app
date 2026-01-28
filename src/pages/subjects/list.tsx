@@ -4,7 +4,7 @@ import { Breadcrumb } from '@/components/refine-ui/layout/breadcrumb'
 import { ListView } from '@/components/refine-ui/views/list-view'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { DEPARTMENT_OPTIONS } from '@/constant'
+import { DEPARTMENT_OPTIONS } from '@/constants'
 import { useTable } from "@refinedev/react-table";
 import { Search } from 'lucide-react'
 import React, { useMemo, useState } from 'react'
