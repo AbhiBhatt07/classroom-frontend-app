@@ -119,7 +119,7 @@ const Create = () => {
             <Form {...form}>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <FormField
-                  name="bannerurl"
+                  name="bannerUrl"
                   control={control}
                   render={({ field }) => (
                     <FormItem>
