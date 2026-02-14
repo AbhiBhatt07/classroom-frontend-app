@@ -1,17 +1,17 @@
-import {ListView} from "@/components/refine-ui/views/list-view.tsx";
-import {Breadcrumb} from "@/components/refine-ui/layout/breadcrumb.tsx";
-import {Search} from "lucide-react";
-import {Input} from "@/components/ui/input.tsx";
-import {useMemo, useState} from "react";
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select.tsx";
-import {CreateButton} from "@/components/refine-ui/buttons/create.tsx";
-import {DataTable} from "@/components/refine-ui/data-table/data-table.tsx";
-import {useTable} from "@refinedev/react-table";
-import {ClassDetails, Subject, User} from "@/types";
-import {ColumnDef} from "@tanstack/react-table";
-import {Badge} from "@/components/ui/badge.tsx";
-import {useList} from "@refinedev/core";
-import {ShowButton} from "@/components/refine-ui/buttons/show.tsx";
+import { ListView } from "@/components/refine-ui/views/list-view.tsx";
+import { Breadcrumb } from "@/components/refine-ui/layout/breadcrumb.tsx";
+import { Search } from "lucide-react";
+import { Input } from "@/components/ui/input.tsx";
+import { useMemo, useState } from "react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select.tsx";
+import { CreateButton } from "@/components/refine-ui/buttons/create.tsx";
+import { DataTable } from "@/components/refine-ui/data-table/data-table.tsx";
+import { useTable } from "@refinedev/react-table";
+import { ClassDetails, Subject, User } from "@/types";
+import { ColumnDef } from "@tanstack/react-table";
+import { Badge } from "@/components/ui/badge.tsx";
+import { useList } from "@refinedev/core";
+import { ShowButton } from "@/components/refine-ui/buttons/show.tsx";
 
 const ClassesList = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -33,10 +33,10 @@ const ClassesList = () => {
     const teachers = teachersQuery?.data?.data || [];
 
     const subjectFilters = selectedSubject === 'all' ? [] : [
-        { field: 'subject', operator: 'eq' as const, value: selectedSubject}
+        { field: 'subject', operator: 'eq' as const, value: selectedSubject }
     ];
     const teacherFilters = selectedTeacher === 'all' ? [] : [
-        { field: 'teacher', operator: 'eq' as const, value: selectedTeacher}
+        { field: 'teacher', operator: 'eq' as const, value: selectedTeacher }
     ];
     const searchFilters = searchQuery ? [
         { field: 'name', operator: 'contains' as const, value: searchQuery }
