@@ -6,7 +6,7 @@ import { source } from "@cloudinary/url-gen/actions/overlay";
 import { fill } from "@cloudinary/url-gen/actions/resize";
 import { Position } from "@cloudinary/url-gen/qualifiers";
 import { compass } from "@cloudinary/url-gen/qualifiers/gravity";
-
+import { text } from "@cloudinary/url-gen/qualifiers/source";
 
 const cld = new Cloudinary({ cloud: { cloudName: CLOUDINARY_CLOUD_NAME } });
 
