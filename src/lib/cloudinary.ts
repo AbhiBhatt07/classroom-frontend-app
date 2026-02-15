@@ -6,11 +6,16 @@ import { source } from "@cloudinary/url-gen/actions/overlay";
 import { fill } from "@cloudinary/url-gen/actions/resize";
 import { Position } from "@cloudinary/url-gen/qualifiers";
 import { compass } from "@cloudinary/url-gen/qualifiers/gravity";
-import { text } from "@cloudinary/url-gen/qualifiers/source";
+
 
 const cld = new Cloudinary({ cloud: { cloudName: CLOUDINARY_CLOUD_NAME } });
 
 export const bannerPhoto = (imageCldPubId: string, name: string) => {
+
+  if(!imageCldPubId || !name) {
+    throw new Error('imageCldPubId and name are required for bannerPhoto');
+  } 
+
  return cld
   .image(imageCldPubId)
   .resize(fill())
@@ -19,7 +24,7 @@ export const bannerPhoto = (imageCldPubId: string, name: string) => {
   .delivery(dpr("auto"))
   .overlay(
    source(
-    text(name, new TextStyle("roboto", 42).fontWeight("bold")).textColor(
+    text(name, new TextStyle("roboto", 62).fontWeight("bold")).textColor(
      "white",
     ),
    ).position(new Position().gravity(compass("west")).offsetX(0.02)),
